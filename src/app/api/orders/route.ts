@@ -1,10 +1,14 @@
 import { NextResponse } from "next/server";import { createClient } from "@supabase/supabase-js";
-export const runtime = 'nodejs';
-const supabase = createClient(  process.env.NEXT_PUBLIC_SUPABASE_URL!,
-  process.env.SUPABASE_SERVICE_ROLE_KEY!
-);
+
+export const runtime = "nodejs";
 
 export async function POST(req: Request) {
+
+  const supabase = createClient(
+    process.env.NEXT_PUBLIC_SUPABASE_URL!,
+    process.env.SUPABASE_SERVICE_ROLE_KEY!
+  );
+
   try {
     const body = await req.json();
 
@@ -31,9 +35,7 @@ export async function POST(req: Request) {
       console.error(error);
 
       return NextResponse.json(
-        {
-          success: false,
-        },
+        { success: false },
         { status: 500 }
       );
     }
@@ -43,13 +45,12 @@ export async function POST(req: Request) {
       trackingCode,
       order: data,
     });
+
   } catch (err) {
     console.error(err);
 
     return NextResponse.json(
-      {
-        success: false,
-      },
+      { success: false },
       { status: 500 }
     );
   }
