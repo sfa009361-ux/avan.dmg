@@ -2,14 +2,15 @@
   "name": "avan.dmg",
   "version": "0.1.0",
   "private": true,
-  "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
-    "lint": "eslint"
-  },
+  "scripts": {  "dev": "next dev",
+  "build": "next build",
+  "preview": "opennextjs-cloudflare preview",
+  "deploy": "opennextjs-cloudflare deploy",
+  "lint": "eslint"
+},
   "dependencies": {
     "@google/generative-ai": "^0.24.1",
+    "@opennextjs/cloudflare": "^1.20.2",
     "@supabase/supabase-js": "^2.110.8",
     "framer-motion": "^12.42.2",
     "groq-sdk": "^1.4.0",
