@@ -2,12 +2,13 @@
   "name": "avan.dmg",
   "version": "0.1.0",
   "private": true,
-  "scripts": {  "dev": "next dev",
-  "build": "next build",
-  "preview": "opennextjs-cloudflare preview",
-  "deploy": "opennextjs-cloudflare deploy",
-  "lint": "eslint"
-},
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "preview": "opennextjs-cloudflare preview",
+    "deploy": "opennextjs-cloudflare deploy",
+    "lint": "eslint"
+  },
   "dependencies": {
     "@google/generative-ai": "^0.24.1",
     "@opennextjs/cloudflare": "^1.20.2",
@@ -20,7 +21,7 @@
     "react-dom": "19.0.0"
   },
   "devDependencies": {
-    "@cloudflare/workers-types": "^4.20260702.1",
+    "@cloudflare/workers-types": "^5.20260728.1",
     "@tailwindcss/postcss": "^4",
     "@types/node": "^20",
     "@types/react": "^19",
@@ -29,6 +30,6 @@
     "eslint-config-next": "16.2.11",
     "tailwindcss": "^4",
     "typescript": "^5",
-    "wrangler": "^3.114.0"
+    "wrangler": "^4.114.0"
   }
 }
