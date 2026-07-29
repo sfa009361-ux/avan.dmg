@@ -1,16 +1,19 @@
 import { createClient } from "@supabase/supabase-js";import { notFound } from "next/navigation";
-export const runtime = 'edge';
-const supabase = createClient(
-  process.env.NEXT_PUBLIC_SUPABASE_URL!,
-  process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!
-);
+
+export const runtime = "nodejs";
 
 export default async function PortfolioDetails({
   params,
 }: {
   params: Promise<{ id: string }>;
 }) {
+  const supabase = createClient(
+    process.env.NEXT_PUBLIC_SUPABASE_URL!,
+    process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!
+  );
+
   const { id } = await params;
+
   const { data: project } = await supabase
     .from("portfolio")
     .select("*")
