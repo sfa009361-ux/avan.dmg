@@ -3,13 +3,12 @@ import { NextResponse } from "next/server";import { createClient } from "@supaba
 export const runtime = "nodejs";
 
 export async function POST(req: Request) {
-
-  const supabase = createClient(
-    process.env.NEXT_PUBLIC_SUPABASE_URL!,
-    process.env.SUPABASE_SERVICE_ROLE_KEY!
-  );
-
   try {
+    const supabase = createClient(
+      process.env.NEXT_PUBLIC_SUPABASE_URL!,
+      process.env.SUPABASE_SERVICE_ROLE_KEY!
+    );
+
     const body = await req.json();
 
     const trackingCode =
